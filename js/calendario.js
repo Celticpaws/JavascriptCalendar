@@ -80,7 +80,7 @@
   function numbers(start,end){
   	var content = "";
   	for (i=start.getDate(); i<= end.getDate();i++){
-  		if (holiday.holidays[start.toISOString().substring(0, 10)] !== undefined){
+  		if (holiday!==undefined && holiday.holidays[start.toISOString().substring(0, 10)] !== undefined){
   			if (start.getDay() == 0){
 	  			content+="<tr>";
 	  		}
