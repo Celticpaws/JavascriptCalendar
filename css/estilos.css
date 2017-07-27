@@ -1,0 +1,50 @@
+th{
+	border: 1px solid white;
+	padding:2px;
+	text-align:center;
+}
+tr{
+	border: 1px solid white;
+	padding:2px;
+	text-align:center;
+}
+
+td{
+	border: 1px solid white;
+	width:25px;
+}
+
+.yel {
+	background-color: yellow;
+}
+
+.gre {
+	background-color: lightgreen;
+}
+
+.ora {
+	background-color: orange;
+}
+.gra {
+	background-color: darkgray;
+}
+
+/* Tooltip text */
+.tooltiptext {
+	position:absolute;
+	left:0;
+	bottom:18px;
+	border-radius:5px;
+}
+
+/* Tooltip arrow */
+.tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
