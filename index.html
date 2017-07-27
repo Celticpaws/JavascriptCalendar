@@ -20,20 +20,32 @@
 		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
 </head>
-<body style="padding-top: 75px">
-
-
-<div class="col-sm-6" >
-<p> Start Date: </p>
-	<input id="d" type="date" value="2008-07-27" placeholder="Start Date">
-	<p> Number of days: </p>
-	<input id="n" type="number" value="10" min=1 placeholder="Number of days">
-	<p> Zone: </p>
-	<input id="t" type="text" value="US" placeholder="Zone">
-	<button onclick="calculate();">Show</button>
+<body style="padding-top: 15px" onload="holidays()">
+<h1> Calendar on JavaScript for 8numbers </h1><br>
+<div class="col-md-12" >
+	<div class="col-md-2" >
+		<h5> Start Date: </h5>
+		<input id="d" type="date" value="2008-07-27" placeholder="Start Date">
+	</div>
+	<div class="col-md-2" >
+		<h5> Number of days: </h5>
+		<input id="n" type="number" value="100" min=1 placeholder="Number of days">
+	</div>
+	<div class="col-md-2" >
+		<h5> Zone: </h5>
+		<input id="t" type="text" value="US" placeholder="Zone">
+	</div>
+	<div class="col-md-2" >
+		<br>
+		<button onclick="holidays();calculate();">Show</button>
+	</div>
 </div>
-<div class="col-sm-6" id="calendar">
+</div>
+<div class="col-md-10" id="calendar">
 </div>
 
 </body>
 </html>
+
+<script src="js/calendario.js">
+</script>
