@@ -4,12 +4,11 @@
   	var c = document.getElementById("t").value;
   	var year = new Date(document.getElementById("d").value);
   	var y = year.getFullYear();
-    $.getJSON('https://holidayapi.com/v1/holidays?key=be42477a-0d10-4623-8ec1-33ade4e092d9&country='+c+'&year='+y, function(data) {
-		 holiday = data;
-		 console.log(holiday);
-		 console.log(data);
-    });
-    console.log(holiday);
+    if (y < 2017){
+      $.getJSON('https://holidayapi.com/v1/holidays?key=be42477a-0d10-4623-8ec1-33ade4e092d9&country='+c+'&year='+y, function(data) {
+      holiday = data;
+      });
+    }
     
   }
 
@@ -19,15 +18,12 @@
   }
 
   function calculate(){
+    holidays();
   	var nu = parseInt(document.getElementById("n").value);
   	var fin = new Date(document.getElementById("d").value);
   	fin.setDate(fin.getDate()+nu);
   	var date = new Date(document.getElementById("d").value);
   	date.setDate(date.getDate()+1);
-
-  	console.log("n -->"+n);
-  	console.log("fin -->"+fin);
-  	console.log("inicio -->"+date);
   	printmonths(date,fin);
   }
 
@@ -38,11 +34,8 @@
   	var lastday = last_day(datebegin);
   	content = "";
   	if (lastday < dateend) {
-  		console.log("este es el last antes del ciclo-->"+lastday);
   		content += printmonth(date,lastday);
   		lastday.setDate(lastday.getDate()+1);
-  		console.log(lastday);
-  		console.log(dateend);
   		while (lastday<dateend){
   			var final = last_day(lastday);
   			if (lastday.getMonth()==dateend.getMonth()){
@@ -53,7 +46,6 @@
   			lastday = final;
   			lastday.setDate(lastday.getDate()+1);		
   		}
-  		console.log("final total -->"+dateend);
   	}else{
   		content+=printmonth(date,dateend);
   	}
@@ -87,10 +79,7 @@
 
   function numbers(start,end){
   	var content = "";
-  	console.log(start);
-  	console.log(holiday);
   	for (i=start.getDate(); i<= end.getDate();i++){
-  		console.log(start);
   		if (holiday.holidays[start.toISOString().substring(0, 10)] !== undefined){
   			if (start.getDay() == 0){
 	  			content+="<tr>";
